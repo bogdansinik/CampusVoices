@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+	max-width: 50%;
+	margin: 0 auto;
+	padding: 20px;
+	text-align: center;
+}
+
+.photo-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+	grid-gap: 20px;
+	margin-top: 40px;
+}
+
+.photo {
+	position: relative;
+}
+
+.photo img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.photo:before {
+	content: "";
+	display: block;
+	padding-top: 100%;
+}
+
+.photo:hover:before {
+	background: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+	transition: background 0.5s ease;
+}
+
+.photo:hover img {
+	opacity: 0.7;
+	transition: opacity 0.5s ease;
+	z-index: 2;
+}
+
+.photo:hover:after {
+	content: "View Image";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	font-size: 20px;
+	color: #fff;
+	z-index: 3;
+}
+
+    </style>
+	<title>Campus Voices</title>
+</head>
+<body>
+	<div class="container">
+		<h1>Welcome to Campus Voices!</h1>
+		<div class="photo-grid">
+			<div class="photo"><img src="primorska.jpg"></div>
+			<div class="photo"><img src="ljubljana.png"></div>
+			<div class="photo"><img src="maribor.png"></div>
+			<div class="photo"><img src="gorica.jpeg"></div>
+		</div>
+	</div>
+</body>
+</html>
