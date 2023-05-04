@@ -1,45 +1,118 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Courses - University of Primorska Campus Voices</title>
+	<title>University of Primorska Campus Voices - Courses</title>
 	<link rel="stylesheet" type="text/css" href="stylePrimorskaCourses.css">
 </head>
 <body>
-	<div class="container">
-		<header>
-			<h1>Courses</h1>
-			<nav>
-				<ul>
-					<li><a href="error.html">All Courses</a></li>
-					<li><a href="error.html">Computer Science</a></li>
-					<li><a href="error.html">Bioinformatics</a></li>
-					<li><a href="error.html">Biopsychology</a></li>
-					<li><a href="error.html">Mathematics</a></li>
-				</ul>
-			</nav>
-		</header>
-		<main>
-			<section class="course">
-				<h2>Computer Science</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac risus vel justo interdum pellentesque. Duis vitae orci sit amet est tristique facilisis vitae non risus. Donec gravida mi sed arcu ultricies placerat. Sed quis urna nisl.</p>
-				<a href="error.html" class="btn">Read More</a>
-			</section>
-			<section class="course">
-				<h2>Bioinformatics</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac risus vel justo interdum pellentesque. Duis vitae orci sit amet est tristique facilisis vitae non risus. Donec gravida mi sed arcu ultricies placerat. Sed quis urna nisl.</p>
-				<a href="error.html" class="btn">Read More</a>
-			</section>
-			<section class="course">
-				<h2>Biopsychology</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac risus vel justo interdum pellentesque. Duis vitae orci sit amet est tristique facilisis vitae non risus. Donec gravida mi sed arcu ultricies placerat. Sed quis urna nisl.</p>
-				<a href="error.html" class="btn">Read More</a>
-			</section>
-			<section class="course">
-				<h2>Mathematics</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac risus vel justo interdum pellentesque. Duis vitae orci sit amet est tristique facilisis vitae non risus. Donec gravida mi sed arcu ultricies placerat. Sed quis urna nisl.</p>
-				<a href="error.html" class="btn">Read More</a>
-			</section>
+	<header>
+		<h1>University of Primorska Campus Voices</h1>
+		<nav>
+			<ul>
+				<li><a href="primorskaHome.html">Home</a></li>
+				<li><a href="primorskaCourses.html">Courses</a></li>
+				<li><a href="primorskaAccommodation.html">Accommodation</a></li>
+				<li><a href="primorskaFood.html">Food</a></li>
+				<li><a href="primorskaProfessors.html">Professors</a></li>
+				<li><a href="primorskaFun.html">Fun</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<h2>Find Your Course</h2>
+
+		<div class="search-box">
+			<label for="course-search">Search by name:</label>
+			<input type="text" id="course-search" placeholder="Enter course name...">
+			<button type="submit">Search</button>
+		</div>
+
+		<h2>Course Ratings</h2>
+
+		<p>Here are some of our most popular courses and their ratings:</p>
+
+		<ul class="course-list">
+			<li>
+				<div class="course-info">
+					<h3>Database Systems</h3>
+					<p>Department: Computer Science</p>
+					<p>Instructor: Dr. John Doe</p>
+					<p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id risus ut felis imperdiet faucibus. Morbi consectetur fringilla lacus. Duis eu nunc vel urna vestibulum interdum at at velit. Praesent posuere, sapien non ullamcorper feugiat, lectus justo convallis quam, ac ullamcorper velit velit ac nibh.</p>
+					<button class="show-more">Show Syllabus</button>
+					<div class="syllabus">
+						<h4>Syllabus</h4>
+						<ul>
+							<li>Introduction to databases</li>
+							<li>Database design and normalization</li>
+							<li>Structured Query Language (SQL)</li>
+							<li>Database programming using JDBC</li>
+							<li>Database management systems (DBMS)</li>
+						</ul>
+					</div>
+					<p>Rating: 4.5/5</p>
+					<a href="#">Rate this course</a>
+				</div>
+				<div class="comments">
+					<h4>Comments</h4>
+					<ul class="comment-list">
+						<li class="comment">
+							<p class="username">John Doe</p>
+							<p class="date">May 1, 2023</p>
+							<p class="comment-text">This course was really challenging, but the professor was great and always available for help. Highly recommend.</p>
+						</li>
+						<li class="comment">
+							<p class="username">Jane Smith</p>
+							<p class="date">April 28, 2023</p>
+							<p class="comment-text">I found this course to be very difficult and the professor was not very helpful. Would not recommend.</p>
+						</li>
+					</ul>
+					<button class="comment-button">Leave a Comment</button>
+				</div>
+			</li>
+			<li>
+				<div class="course-info">
+					<h3>Calculus I</h3>
+					<p>Department: Mathematics</p>
+					<p>Instructor: Dr. Jane Smith</p>
+					<p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id risus ut felis imperdiet faucibus. Morbi consectetur fringilla lacus. Duis eu nunc vel urna vestibulum interdum at at velit. Praesent posuere, sapien non ullamcorper feugiat, lectus justo convallis quam, ac ullamcorper velit velit ac nibh.</p>
+					<button class="show-more">Show Syllabus</button>
+					<div class="syllabus">
+						<h4>Syllabus</h4>
+						<ul>
+							<li>Functions and limits</li>
+								<li>Differentiation</li>
+								<li>Applications of differentiation</li>
+								<li>Integration</li>
+								<li>Applications of integration</li>
+							</ul>
+						</div>
+							<p>Rating: 4.5/5</p>
+							<a href="#">Rate this course</a>
+						</div>
+
+						<div class="comments">
+							<h4>Comments</h4>
+							<ul class="comment-list">
+								<li class="comment">
+									<p class="username">John Doe</p>
+									<p class="date">May 1, 2023</p>
+									<p class="comment-text">This course was really challenging, but the professor was great and always available for help. Highly recommend.</p>
+								</li>
+								<li class="comment">
+									<p class="username">Jane Smith</p>
+									<p class="date">April 28, 2023</p>
+									<p class="comment-text">I found this course to be very difficult and the professor was not very helpful. Would not recommend.</p>
+								</li>
+							</ul>
+							<button class="comment-button">Leave a Comment</button>
+						</div>
+					</div>
+				</div>
+			</div>
 		</main>
-	</div>
-</body>
-</html>
+		<footer>
+			<p>&copy; 2023 University of Primorska Campus Voices</p>
+		</footer>
+	</body>
+	</html>
