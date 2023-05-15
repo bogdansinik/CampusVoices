@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             //$_SESSION['email'] = $email;
             $_SESSION['uname'] = $data['uname'];
             // Redirect user to welcome page    
-            header('Location: ads.php');
+            header('Location: primorskaHome.html');
         } else {
             echo '<script>alert("Wrong username or password")</script>';
             //header("Location: login_view.php");
