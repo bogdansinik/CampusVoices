@@ -1,5 +1,5 @@
 <?php
-//session_start();
+session_start();
 
 include 'db_conn.php';
 
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <title>LOGIN</title>
 
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="styleLogin.css">
 
 </head>
 
@@ -68,6 +68,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </body>
 
 </html>
-<link rel="stylesheet"  href="style.css">
+
 
 
