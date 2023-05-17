@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="stylePrimorskaHome.css">
 </head>
 <header>
-	<a href="welcomePage.html">HomePage</a>
+	<a href="welcomePage.php">HomePage</a>
 	<a href="login.php">Login</a>
 </header>
 <body>
@@ -13,13 +13,13 @@
 		<h1>Welcome to University of Primorska Campus Voices</h1>
 		<div class="options">
 			<!-- <div class="div" id="courses">
-				<a href="primorskaCourses.html">Courses</a>
+				<a href="primorskaCourses.php">Courses</a>
 			</div>
 			<div class="div" id="professors">
-				<a href="primorskaProfessors.html">Professors</a>
+				<a href="primorskaProfessors.php">Professors</a>
 			</div> -->
 			<div class="div" id="faculties">
-				<a href="primorskaFaculties.html">Faculties</a>
+				<a href="primorskaFaculties.php">Faculties</a>
 			</div> 
 			<div class="div" id="accommodation">
 				<a href="primorskaAccommodation.php">Accommodation</a>
@@ -28,7 +28,7 @@
 				<a href="primorskaFood.php">Food</a>
 			</div>
 			<div class="div" id="fun">
-				<a href="primorskaFun.html">Fun</a>
+				<a href="primorskaFun.php">Fun</a>
 			</div>
 		</div>
 	</div>

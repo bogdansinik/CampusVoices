@@ -1,49 +1,3 @@
-
-<!-- <!DOCTYPE html>
-<html>
-<head>
-	<title>Accommodation Offers</title>
-    <link rel="stylesheet" type="text/css" href="stylePrimorskaAccommodation.css">
-</head>
-<body>
-	<header>
-		<h1>University of Primorska Campus Voices</h1>
-		<nav>
-			<ul>
-				<li><a href="primorskaHome.html">Home</a></li>
-				<li><a href="primorskaCourses.html">Courses</a></li>
-				<li><a href="primorskaAccommodation.php">Accommodation</a></li>
-				<li><a href="primorskaFood.php">Food</a></li>
-				<li><a href="primorskaProfessors.html">Professors</a></li>
-				<li><a href="primorskaFun.html">Fun</a></li>
-				<li><a href="login.php">Login</a></li>
-			</ul>
-		</nav>
-	</header>
-	<h1>Accommodation Offers</h1>
-	<div class="container">
-		<div class="offer">
-			<img src="flat1.jpg" alt="Flat 1">
-			<p>Flat 1: 1-bedroom apartment located in the city center, fully furnished.</p>
-		</div>
-		<div class="offer">
-			<img src="flat2.jpg" alt="Flat 2">
-			<p>Flat 2: 2-bedroom apartment located in the suburbs, with a balcony and parking.</p>
-		</div>
-		<div class="offer">
-			<img src="flat3.jpg" alt="Flat 3">
-			<p>Flat 3: Studio apartment located near the university, with a kitchenette and air conditioning.</p>
-		</div>
-		<div class="offer">
-			<img src="flat4.jpg" alt="Flat 4">
-			<p>Flat 4: 3-bedroom apartment located in a quiet neighborhood, with a garden and barbecue area.</p>
-		</div>
-	</div>
-	<footer>
-		<p>&copy; 2023 University of Primorska Campus Voices</p>
-	</footer>
-</body>
-</html> -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,12 +9,12 @@
 		<h1>University of Primorska Campus Voices - Accommodation</h1>
 		<nav>
 			<ul>
-				<li><a href="primorskaHome.html">Home</a></li>
-				<li><a href="primorskaCourses.html">Courses</a></li>
+				<li><a href="primorskaHome.php">Home</a></li>
+				<li><a href="primorskaCourses.php">Courses</a></li>
 				<li><a href="primorskaAccommodation.php">Accommodation</a></li>
 				<li><a href="primorskaFood.php">Food</a></li>
-				<li><a href="primorskaProfessors.html">Professors</a></li>
-				<li><a href="primorskaFun.html">Fun</a></li>
+				<li><a href="primorskaProfessors.php">Professors</a></li>
+				<li><a href="primorskaFun.php">Fun</a></li>
 				<li><a href="login.php">Login</a></li>
 			</ul>
 		</nav>
@@ -76,7 +30,6 @@ if (!$conn) {
 }
 session_start();
 $userid = $_SESSION['id'];
-
 // Fetch the accommodations from the database
 $query = "SELECT * FROM Accommodation";
 $result = mysqli_query($conn, $query);
@@ -92,11 +45,23 @@ if (mysqli_num_rows($result) > 0) {
         $address = $row['address'];
         $type = $row['type'];
         $images = $row['images'];
+		// Fetch the reviews for the accommodation
+        $reviewsQuery = "SELECT * FROM AccommodationReview WHERE accommodation_id = $id";
+        $reviewsResult = mysqli_query($conn, $reviewsQuery);
+        
+        // Calculate the average rating
+        $totalStars = 0;
+        $reviewCount = mysqli_num_rows($reviewsResult);
+        while ($review = mysqli_fetch_assoc($reviewsResult)) {
+            $totalStars += $review['stars'];
+        }
+        $averageRating = ($reviewCount > 0) ? $totalStars / $reviewCount : 0;
 
         // Generate the HTML for each accommodation
 		echo '<div class="offer">';
+		echo '<a href="currentAccommodation.php?id=' . $id . '">';
 		echo '<img src="' . $images . '" alt="' . $name . '">';
-		echo '<p>' . $address . ': ' . $description . '</p>';
+		echo '<p>' . $city . ", " . $address . "<br>" . $description . '<br> Average rating: '.$averageRating.' </p>';
 		echo '</div>';
 	}
 } else {
