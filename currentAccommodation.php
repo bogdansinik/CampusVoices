@@ -80,6 +80,7 @@ if (isset($_GET['id'])) {
         }
 
         // Generate the HTML for the current accommodation page
+        include "header.php";
         ?>
         <!DOCTYPE html>
         <html>
@@ -89,21 +90,8 @@ if (isset($_GET['id'])) {
             <link rel="stylesheet" type="text/css" href="styleCurrentAccommodation.css">
         </head>
         <body>
-            <header>
-                <h1>University of Primorska Campus Voices - Accommodation</h1>
-                <nav>
-                    <ul>
-                        <li><a href="primorskaHome.php">Home</a></li>
-                        <li><a href="primorskaCourses.php">Courses</a></li>
-                        <li><a href="primorskaAccommodation.php">Accommodation</a></li>
-                        <li><a href="primorskaFood.php">Food</a></li>
-                        <li><a href="primorskaProfessors.php">Professors</a></li>
-                        <li><a href="primorskaFun.php">Fun</a></li>
-                        <li><a href="login.php">Login</a></li>
-                    </ul>
-                </nav>
-            </header>
-
+           
+        
             <div class="current-accommodation">
                 <h2><?php echo $name; ?></h2>
                 <img src="<?php echo $images; ?>" alt="<?php echo $name; ?>">
@@ -122,7 +110,8 @@ if (isset($_GET['id'])) {
                         $reviewBody = $review['body'];
                         $reviewStars = $review['stars'];
                         $reviewUserId = $review['user_id'];
-
+                        $date = $review['date'];
+                        // $date = date("Y-m-d h:m:s",time());
                         // Fetch the user's information based on user_id
                         $userQuery = "SELECT name, surname FROM User WHERE id = $reviewUserId";
                         $userResult = mysqli_query($conn, $userQuery);
@@ -136,6 +125,7 @@ if (isset($_GET['id'])) {
                         <div class="review">
                             <p>Rating: <?php echo $reviewStars; ?>/5</p>
                             <p>By: <?php echo $reviewUserName . ' ' . $reviewUserSurname; ?></p>
+                            <p><?php echo $date; ?></p>
                             <p><?php echo $reviewBody; ?></p>
                             <?php
                             if ($isUserReview) {

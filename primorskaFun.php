@@ -1,53 +1,4 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-	<title>University of Primorska Campus Voices - Fun</title>
-	<link rel="stylesheet" type="text/css" href="stylePrimorskaFun.css">
-	<link rel="stylesheet" type="text/css" href="styleCurrentCourse.css">
-</head>
-<body>
-	<header>
-		<h1>University of Primorska Campus Voices</h1>
-		<nav>
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="courses.html">Courses</a></li>
-				<li><a href="accommodation.html">Accommodation</a></li>
-				<li><a href="food.html">Food</a></li>
-				<li><a href="professors.html">Professors</a></li>
-				<li><a href="fun.html">Fun</a></li>
-			</ul>
-		</nav>
-	</header>
 
-	<main>
-		<h2>Student Organizations</h2>
-
-		<ul class="org-list">
-			<li>
-				<h3>SOUP - Student organization University of Primorska</h3>
-				<p>SOUP is a student organization at the University of Primorska that provides various activities and opportunities for students to engage in the academic and social life of the university. The organization is run by students, for students, and strives to promote student involvement in university decision-making and to enhance the student experience.</p>
-				<a href="soup-events.html">See Events</a>
-			</li>
-			<li>
-				<h3>ESN - Erasmus Student Network</h3>
-				<p>ESN is a student organization at the University of Primorska that provides support and assistance to international students who are studying at the university. The organization provides a variety of services and activities, such as language courses, cultural events, and social gatherings, to help international students integrate into the university and the local community.</p>
-				<a href="esn-events.html">See Events</a>
-			</li>
-			<li>
-				<h3>FAMNIT Student Council</h3>
-				<p>The FAMNIT Student Council is a student organization that represents the interests and concerns of students in the Faculty of Mathematics, Natural Sciences and Information Technologies at the University of Primorska. The organization works to improve the quality of education and student life in the faculty and to foster a sense of community and collaboration among students.</p>
-				<a href="famnit-events.html">See Events</a>
-			</li>
-		</ul>
-	</main>
-	<h2>Ads</h2>
-
-  <footer>
-            <p>&copy; 2023 University of Primorska Campus Voices</p>
-        </footer>
-    </body>
-    </html> -->
 	<?php
 include "db_conn.php";
 
@@ -95,6 +46,7 @@ if (isset($_POST['delete'])) {
 $query = "SELECT * FROM Ad ORDER BY date DESC";
 $result = mysqli_query($conn, $query);
 $ads = mysqli_fetch_all($result, MYSQLI_ASSOC);
+include "header.php";
 ?>
 
 <!DOCTYPE html>
@@ -103,22 +55,9 @@ $ads = mysqli_fetch_all($result, MYSQLI_ASSOC);
     <title>Primorska Fun - Ads</title>
     <link rel="stylesheet" type="text/css" href="stylePrimorskaCourses.css">
 	<link rel="stylesheet" type="text/css" href="styleCurrentProfessor.css">
+    <link rel="stylesheet" type="text/css" href="header.css">
 </head>
 <body>
-    <header>
-        <h1>University of Primorska Campus Voices - Fun</h1>
-        <nav>
-            <ul>
-                <li><a href="primorskaHome.php">Home</a></li>
-                <li><a href="primorskaCourses.php">Courses</a></li>
-                <li><a href="primorskaAccommodation.php">Accommodation</a></li>
-                <li><a href="primorskaFood.php">Food</a></li>
-                <li><a href="primorskaProfessors.php">Professors</a></li>
-                <li><a href="primorskaFun.php">Fun</a></li>
-                <li><a href="login.php">Login</a></li>
-            </ul>
-        </nav>
-    </header>
 	<main>
 		<h2>Student Organizations</h2>
 

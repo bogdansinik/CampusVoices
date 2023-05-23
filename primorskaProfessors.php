@@ -1,32 +1,39 @@
+<?php
+
+include "header.php";
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Professors</title>
     <link rel="stylesheet" type="text/css" href="stylePrimorskaCourses.css">
+    <link rel="stylesheet" type="text/css" href="header.css">
 </head>
 <body>
-    <header>
-        <h1>University of Primorska Campus Voices</h1>
-        <nav>
-            <ul>
-                <li><a href="primorskaHome.php">Home</a></li>
-                <li><a href="primorskaCourses.php">Courses</a></li>
-                <li><a href="primorskaAccommodation.php">Accommodation</a></li>
-                <li><a href="primorskaFood.php">Food</a></li>
-                <li><a href="primorskaProfessors.php">Professors</a></li>
-                <li><a href="primorskaFun.php">Fun</a></li>
-                <li><a href="login.php">Login</a></li>
-            </ul>
-        </nav>
-    </header>
+    
     <div class="container">
+        <div class="search-form">
+            <form method="get" action="primorskaProfessors.php">
+                <label for="search">Search for a Professor:</label>
+                <input type="text" id="search" name="search" required>
+                <input type="submit" value="Search">
+            </form>
+        </div>
         <div class="professors">
             <?php
             // Include the database connection file
             include 'db_conn.php';
 
-            // Fetch the professors from the database along with average rating
-            $query = "SELECT Professor.*, AVG(ProfessorReview.stars) AS average_rating FROM Professor LEFT JOIN ProfessorReview ON Professor.id = ProfessorReview.professor_id GROUP BY Professor.id";
+            // Retrieve the search query from the URL if it exists
+            $search = $_GET['search'] ?? '';
+
+            // Fetch the professors from the database based on the search query
+            $query = "SELECT Professor.*, AVG(ProfessorReview.stars) AS average_rating 
+                      FROM Professor 
+                      LEFT JOIN ProfessorReview ON Professor.id = ProfessorReview.professor_id 
+                      WHERE Professor.name LIKE '%$search%' OR Professor.surname LIKE '%$search%'
+                      GROUP BY Professor.id";
             $result = mysqli_query($conn, $query);
 
             // Check if there are any professors
@@ -52,7 +59,7 @@
                 }
             } else {
                 // No professors found
-                echo '<p>No professors available at the moment.</p>';
+                echo '<p>No professors available for the given search query.</p>';
             }
 
             // Close the database connection
@@ -65,4 +72,3 @@
     </footer>
 </body>
 </html>
-
