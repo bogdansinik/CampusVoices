@@ -31,7 +31,10 @@ include "header.php";
         if (!$conn) {
             die("Connection failed: " . mysqli_connect_error());
         }
-        session_start();
+        if(!isset($_SESSION)) 
+        { 
+            session_start(); 
+        } 
         $userid = $_SESSION['id'];
         // Fetch the accommodations from the database based on the selected city (if any)
         $cityFilter = $_GET['city'] ?? 'all';

@@ -11,7 +11,10 @@
         <?php
         // Include the database connection file
         include 'db_conn.php';
-        session_start();
+        if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
         $professorID = $_SESSION['id'];
 
         // Fetch professor's information from the database

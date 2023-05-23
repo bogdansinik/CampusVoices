@@ -27,7 +27,10 @@ include "header.php";
             <?php
             // Include the database connection file
             include 'db_conn.php';
-            session_start();
+            if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
             $userid = $_SESSION['id'];
 
             // Fetch the restaurants from the database based on the selected city

@@ -6,7 +6,10 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-session_start();
+if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
 $userid = $_SESSION['id'];
 
 // Check if professor ID is provided in the URL

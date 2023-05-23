@@ -1,6 +1,9 @@
 <?php
 
-session_start();
+if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
 $userId = $_SESSION['id'];
 $role = $_SESSION['role'];
 //echo $role;

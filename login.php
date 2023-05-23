@@ -1,5 +1,8 @@
 <?php
-session_start();
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
 
 include 'db_conn.php';
 
@@ -15,7 +18,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql = "SELECT * FROM User WHERE username = '$uname' AND password = '$pass'";
     if ($result = mysqli_query($conn, $sql)) {
         if ($result->num_rows > 0) {
-            session_start();
+            if(!isset($_SESSION)) 
+            { 
+                session_start(); 
+            } 
             $data = mysqli_fetch_array($result);
             // Store data in session variables
             $_SESSION['loggedin'] = true;

@@ -7,7 +7,10 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-session_start();
+if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
 $userid = $_SESSION['id'];
 
 // Handle ad submission
