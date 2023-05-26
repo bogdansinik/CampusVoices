@@ -43,38 +43,47 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
     <title>LOGIN</title>
-
     <link rel="stylesheet" type="text/css" href="styleLogin.css">
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
 
+        .tree-stand {
+            grid-column: 1;
+        }
+
+        .login-form {
+            grid-column: 2;
+        }
+    </style>
 </head>
-
 <body>
-
-     <form action="login.php" method="post">
-
-        <h2>LOGIN</h2>
-
-        <label>User Name</label>
-
-        <input type="text" name="uname" placeholder="User Name"><br>
-
-        <label>Password</label>
-
-        <input type="password" name="password" placeholder="Password"><br> 
-
-        <button type="submit">Login</button>
-
-     </form>
-<p>If not registered <br><a href="register.php">click here</a></p>
+    <div class="grid-container">
+        <div class="tree-stand">
+            <img src="tree-stand.jpg" alt="Tree Stand">
+        </div>
+        <div class="login-form">
+            <form action="login.php" method="post">
+                <h2>LOGIN</h2>
+                <label>User Name</label>
+                <input type="text" name="uname" placeholder="User Name"><br>
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Password"><br> 
+                <button type="submit">Login</button>
+            </form>
+            <p>If not registered, <a href="register.php">click here</a></p>
+        </div>
+    </div>
 </body>
-
 </html>
+
+
 
 
 
