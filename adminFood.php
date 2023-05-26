@@ -33,11 +33,12 @@ include "header.php";
     $phone = sanitize($_POST['phone']);
     $price = sanitize($_POST['price']);
     $city = sanitize($_POST['city']);
+    $image = sanitize($_POST['image']);
     //echo $city != "Izola";
     if($city != "Koper" & $city != "Izola" & $city != "Portoroz" & $city != "Piran"){
         //header("Location: adminFood.php");
         echo $city;
-    }else $sql = "UPDATE Restaurants SET name='$name', address='$address', phone='$phone', price = '$price', city = '$city' WHERE id='$id'";
+    }else $sql = "UPDATE Restaurants SET name='$name', address='$address', phone='$phone', price = '$price', city = '$city', image = '$image' WHERE id='$id'";
     if ($conn->query($sql) === TRUE) {
       echo "Restaurant updated successfully.<br>";
     } else {
@@ -84,7 +85,7 @@ include "header.php";
   if ($result->num_rows > 0) {
     // Display restaurant data in a table
     echo "<table>";
-    echo "<tr><th>ID</th><th>Name</th><th>City</th><th>Address</th><th>Phone</th><th>Price</th></tr>";
+    echo "<tr><th>ID</th><th>Name</th><th>City</th><th>Address</th><th>Phone</th><th>Price</th><th>Image</th></tr>";
 
     while ($row = $result->fetch_assoc()) {
       echo "<tr>";
@@ -95,6 +96,7 @@ include "header.php";
       echo "<td><input type='text' name='address' value='".$row["address"]."'></td>";
       echo "<td><input type='text' name='phone' value='".$row["phone"]."'></td>";
       echo "<td><input type='text' name='price' value='".$row["price"]."'></td>";
+      echo "<td><input type='text' name='image' value='".$row["image"]."'></td>";
       echo "<td>
               <input type='hidden' name='id' value='".$row["id"]."'>
               <input type='submit' name='update' value='Update'>
@@ -112,6 +114,7 @@ include "header.php";
     echo "<td><input type='text' name='address' placeholder='Restaurant Address' required></td>";
     echo "<td><input type='text' name='phone' placeholder='Restaurant Phone' required></td>";
     echo "<td><input type='text' name='price' placeholder='Restaurant Price' required></td>";
+    echo "<td><input type='text' name='image' placeholder='Restaurant Image' required></td>";
     echo "<td><input type='submit' name='add' value='Add'></td>";
     echo "</form>";
     echo "</tr>";

@@ -65,7 +65,7 @@ include "header.php";
         //header('Location: adminCourses.php');
         echo "asldjnasjkd2";
     }
-    else {$sql = "INSERT INTO Courses (name, description, professor_id, link, semester) VALUES ('$name', '$description', '$professor_id', '$link', '$semester')";}
+    else $sql = "INSERT INTO Courses (name, description, professor_id, link, semester) VALUES ('$name', '$description', '$professor_id', '$link', '$semester')";
     if ($conn->query($sql) === TRUE) {
       echo "Course added successfully.<br>";
     } else {
