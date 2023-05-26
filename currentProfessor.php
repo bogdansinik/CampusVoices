@@ -11,7 +11,7 @@ if(!isset($_SESSION))
         session_start(); 
     } 
 $userid = $_SESSION['id'];
-
+$role = $_SESSION['role'];
 // Check if professor ID is provided in the URL
 if (isset($_GET['id'])) {
     $professorId = $_GET['id'];
@@ -139,59 +139,61 @@ if (isset($_GET['id'])) {
                     echo '<p>No reviews available.</p>';
                 }
                 ?>
-
-                <h3>Leave a Review</h3>
-                <?php
-                // Check if the user has already reviewed this professor
-                $existingReviewQuery = "SELECT * FROM ProfessorReview WHERE professor_id = $professorId AND user_id = $userid";
-                $existingReviewResult = mysqli_query($conn, $existingReviewQuery);
-                $existingReviewCount = mysqli_num_rows($existingReviewResult);
-
-                if ($existingReviewCount > 0) {
-                    // User has already reviewed this professor, display the update review form
-                    $existingReview = mysqli_fetch_assoc($existingReviewResult);
-                    $existingReviewId = $existingReview['id'];
-                    $existingReviewStars = $existingReview['stars'];
-                    $existingReviewBody = $existingReview['body'];
-                    ?>
-                    <form action="" method="POST">
-                        <input type="hidden" name="review_id" value="<?php echo $existingReviewId; ?>">
-                        <label for="stars">Rating:</label>
-                        <select name="stars">
-                            <option value="1" <?php if ($existingReviewStars == 1) echo 'selected'; ?>>1</option>
-                            <option value="2" <?php if ($existingReviewStars == 2) echo 'selected'; ?>>2</option>
-                            <option value="3" <?php if ($existingReviewStars == 3) echo 'selected'; ?>>3</option>
-                            <option value="4" <?php if ($existingReviewStars == 4) echo 'selected'; ?>>4</option>
-                            <option value="5" <?php if ($existingReviewStars == 5) echo 'selected'; ?>>5</option>
-                        </select>
-                        <br>
-                        <label for="review">Review:</label><br>
-                        <textarea name="review" rows="4" cols="50"><?php echo $existingReviewBody; ?></textarea>
-                        <br>
-                        <input type="submit" name="submit" value="Update Review">
-                    </form>
-                    <?php
-                } else {
-                    // User has not reviewed this professor, display the new review form
-                    ?>
-                    <form action="" method="POST">
-                        <label for="stars">Rating:</label>
-                        <select name="stars">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                        <br>
-                        <label for="review">Review:</label><br>
-                        <textarea name="review" rows="4" cols="50"></textarea>
-                        <br>
-                        <input type="submit" name="submit" value="Submit Review">
-                    </form>
-                    <?php
+ <?php
+                if($role == "student"){
+ 
+                  
+                    echo "<h3>Leave a Review</h3>";
+                    
+                    // Check if the user has already reviewed this professor
+                    $existingReviewQuery = "SELECT * FROM ProfessorReview WHERE professor_id = $professorId AND user_id = $userid";
+                    $existingReviewResult = mysqli_query($conn, $existingReviewQuery);
+                    $existingReviewCount = mysqli_num_rows($existingReviewResult);
+                    
+                    if ($existingReviewCount > 0) {
+                        // User has already reviewed this professor, display the update review form
+                        $existingReview = mysqli_fetch_assoc($existingReviewResult);
+                        $existingReviewId = $existingReview['id'];
+                        $existingReviewStars = $existingReview['stars'];
+                        $existingReviewBody = $existingReview['body'];
+                    
+                        echo "<form action='' method='POST'>";
+                        echo "<input type='hidden' name='review_id' value='$existingReviewId'>";
+                        echo "<label for='stars'>Rating:</label>";
+                        echo "<select name='stars'>";
+                        echo "<option value='1'" . ($existingReviewStars == 1 ? "selected" : "") . ">1</option>";
+                        echo "<option value='2'" . ($existingReviewStars == 2 ? "selected" : "") . ">2</option>";
+                        echo "<option value='3'" . ($existingReviewStars == 3 ? "selected" : "") . ">3</option>";
+                        echo "<option value='4'" . ($existingReviewStars == 4 ? "selected" : "") . ">4</option>";
+                        echo "<option value='5'" . ($existingReviewStars == 5 ? "selected" : "") . ">5</option>";
+                        echo "</select>";
+                        echo "<br>";
+                        echo "<label for='review'>Review:</label><br>";
+                        echo "<textarea name='review' rows='4' cols='50'>$existingReviewBody</textarea>";
+                        echo "<br>";
+                        echo "<input type='submit' name='submit' value='Update Review'>";
+                        echo "</form>";
+                    } else {
+                        // User has not reviewed this professor, display the new review form
+                        echo "<form action='' method='POST'>";
+                        echo "<label for='stars'>Rating:</label>";
+                        echo "<select name='stars'>";
+                        echo "<option value='1'>1</option>";
+                        echo "<option value='2'>2</option>";
+                        echo "<option value='3'>3</option>";
+                        echo "<option value='4'>4</option>";
+                        echo "<option value='5'>5</option>";
+                        echo "</select>";
+                        echo "<br>";
+                        echo "<label for='review'>Review:</label><br>";
+                        echo "<textarea name='review' rows='4' cols='50'></textarea>";
+                        echo "<br>";
+                        echo "<input type='submit' name='submit' value='Submit Review'>";
+                        echo "</form>";
+                    }
                 }
-                ?>
+                    ?>
+                    
 
             </div>
 

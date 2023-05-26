@@ -97,7 +97,7 @@ if (isset($_GET['id'])) {
                 <h2><?php echo $name; ?></h2>
                 <img src="<?php echo $images; ?>" alt="<?php echo $name; ?>">
                 <p><?php echo $city . ", " . $address; ?></p>
-                <p><?php echo $description; ?></p>
+                
                 <p>Average rating: <?php echo number_format($averageRating, 1); ?></p>
                 <p>Contact number: <?php echo $contactNumber; ?></p>
                 <p>Student price: <?php echo $price; ?>€</p>

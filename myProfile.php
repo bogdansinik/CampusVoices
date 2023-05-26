@@ -24,12 +24,13 @@
         if (mysqli_num_rows($resultProfessor) > 0) {
             $rowProfessor = mysqli_fetch_assoc($resultProfessor);
             $professorName = $rowProfessor['name'];
+            $professorSurname = $rowProfessor['surname'];
             $professorEmail = $rowProfessor['email'];
             $professorDepartment = $rowProfessor['department'];
 
-            echo '<h2>Welcome, Professor ' . $professorName . '</h2>';
+            echo '<h2>Welcome, Professor ' . $professorName .' '. $professorSurname . '</h2>';
             echo '<h3>Personal Information:</h3>';
-            echo '<p>Name: ' . $professorName . '</p>';
+            echo '<p>Name: ' . $professorName .' '. $professorSurname . '</p>';
             echo '<p>Email: ' . $professorEmail . '</p>';
             echo '<p>Department: ' . $professorDepartment . '</p>';
 

@@ -11,7 +11,7 @@ if(!isset($_SESSION))
         session_start(); 
     } 
 $userid = $_SESSION['id'];
-
+$role = $_SESSION['role'];
 // Check if course ID is provided in the URL
 if (isset($_GET['id'])) {
     $courseId = $_GET['id'];
@@ -143,47 +143,47 @@ if (isset($_GET['id'])) {
                 echo '<p>No reviews available.</p>';
             }
             ?>
+<?php
+if($role == 'student') {
+echo "<h3>Leave a Review</h3>";
 
-            <h3>Leave a Review</h3>
-            <?php
-            // Check if the user has already reviewed this course
-            $existingReviewQuery = "SELECT * FROM CoursesReview WHERE course_id = $courseId AND user_id = $userid";
-            $existingReviewResult = mysqli_query($conn, $existingReviewQuery);
-            $existingReviewCount = mysqli_num_rows($existingReviewResult);
+// Check if the user has already reviewed this course
+$existingReviewQuery = "SELECT * FROM CoursesReview WHERE course_id = $courseId AND user_id = $userid";
+$existingReviewResult = mysqli_query($conn, $existingReviewQuery);
+$existingReviewCount = mysqli_num_rows($existingReviewResult);
 
-            if ($existingReviewCount > 0) {
-                // User has already reviewed this course, display the edit review form
-                $existingReview = mysqli_fetch_assoc($existingReviewResult);
-                $existingReviewId = $existingReview['id'];
-                $existingReviewStars = $existingReview['stars'];
-                $existingReviewBody = $existingReview['body'];
-                ?>
-                <form action="" method="POST">
-                    <input type="hidden" name="review_id" value="<?php echo $existingReviewId; ?>">
-                    <label for="stars">Rating:</label>
-                    <input type="number" name="stars" min="1" max="5" value="<?php echo $existingReviewStars; ?>" required>
-                    <br>
-                    <label for="review">Review:</label>
-                    <textarea name="review" rows="4" cols="50" required><?php echo $existingReviewBody; ?></textarea>
-                    <br>
-                    <input type="submit" name="submit" value="Update Review">
-                </form>
-                <?php
-            } else {
-                // User has not reviewed this course, display the new review form
-                ?>
-                <form action="" method="POST">
-                    <label for="stars">Rating:</label>
-                    <input type="number" name="stars" min="1" max="5" required>
-                    <br>
-                    <label for="review">Review:</label>
-                    <textarea name="review" rows="4" cols="50" required></textarea>
-                    <br>
-                    <input type="submit" name="submit" value="Submit Review">
-                </form>
-                <?php
-            }
-            ?>
+if ($existingReviewCount > 0) {
+    // User has already reviewed this course, display the edit review form
+    $existingReview = mysqli_fetch_assoc($existingReviewResult);
+    $existingReviewId = $existingReview['id'];
+    $existingReviewStars = $existingReview['stars'];
+    $existingReviewBody = $existingReview['body'];
+
+    echo "<form action='' method='POST'>";
+    echo "<input type='hidden' name='review_id' value='$existingReviewId'>";
+    echo "<label for='stars'>Rating:</label>";
+    echo "<input type='number' name='stars' min='1' max='5' value='$existingReviewStars' required>";
+    echo "<br>";
+    echo "<label for='review'>Review:</label>";
+    echo "<textarea name='review' rows='4' cols='50' required>$existingReviewBody</textarea>";
+    echo "<br>";
+    echo "<input type='submit' name='submit' value='Update Review'>";
+    echo "</form>";
+} else {
+    // User has not reviewed this course, display the new review form
+    echo "<form action='' method='POST'>";
+    echo "<label for='stars'>Rating:</label>";
+    echo "<input type='number' name='stars' min='1' max='5' required>";
+    echo "<br>";
+    echo "<label for='review'>Review:</label>";
+    echo "<textarea name='review' rows='4' cols='50' required></textarea>";
+    echo "<br>";
+    echo "<input type='submit' name='submit' value='Submit Review'>";
+    echo "</form>";
+    }
+}
+?>
+
         </div>
     </body>
     </html>
