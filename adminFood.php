@@ -33,9 +33,10 @@ include "header.php";
     $phone = sanitize($_POST['phone']);
     $price = sanitize($_POST['price']);
     $city = sanitize($_POST['city']);
-    if($city != "Koper" | $city != "Izola" |$city != "Portoroz" | $city != "Piran"){
-        header("Location: adminFood.php");
-
+    //echo $city != "Izola";
+    if($city != "Koper" & $city != "Izola" & $city != "Portoroz" & $city != "Piran"){
+        //header("Location: adminFood.php");
+        echo $city;
     }else $sql = "UPDATE Restaurants SET name='$name', address='$address', phone='$phone', price = '$price', city = '$city' WHERE id='$id'";
     if ($conn->query($sql) === TRUE) {
       echo "Restaurant updated successfully.<br>";
@@ -65,10 +66,10 @@ include "header.php";
     $price = sanitize($_POST['price']);
     $city = sanitize($_POST['city']);
     $image = sanitize($_POST['image']);
-    if($city != "Koper" | $city != "Izola" |$city != "Portoroz" | $city != "Piran"){
+    if($city != "Koper" & $city != "Izola" & $city != "Portoroz" & $city != "Piran"){
         header("Location: adminFood.php");
 
-    }else {$sql = "INSERT INTO Restaurants (name, address, phone, price, image, city) VALUES ('$name', '$address', '$phone', '$price','$image', '$city')";}
+    }else {$sql = "INSERT INTO Restaurants (name, address, phone, price, city, image) VALUES ('$name', '$address', '$phone', '$price', '$city','$image')";}
     if ($conn->query($sql) === TRUE) {
       echo "Restaurant added successfully.<br>";
     } else {

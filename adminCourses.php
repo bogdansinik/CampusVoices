@@ -32,7 +32,7 @@ include "header.php";
     $professor_id = $_POST['professor_id'];
     $link = $_POST['link'];
     $semester = $_POST['semester'];
-    if($semester != 'Summer' | $semester != 'Winter') {
+    if($semester != 'Spring' & $semester != 'Winter') {
         header('Location: adminCourses.php');
     }else  {$sql = "UPDATE Courses SET name='$name', description='$description', professor_id='$professor_id', link='$link', semester = '$semester' WHERE id='$id'";}
     if ($conn->query($sql) === TRUE) {
@@ -61,10 +61,11 @@ include "header.php";
     $professor_id = $_POST['professor_id'];
     $link = $_POST['link'];
     $semester = $_POST['semester'];
-    if($semester != 'Summer' | $semester != 'Winter') {
-        header('Location: adminCourses.php');
+    if($semester != 'Spring' & $semester != 'Winter') {
+        //header('Location: adminCourses.php');
+        echo "asldjnasjkd2";
     }
-    else $sql = "INSERT INTO Courses (name, description, professor_id, link, semester) VALUES ('$name', '$description', '$professor_id', '$link', '$semester')";
+    else {$sql = "INSERT INTO Courses (name, description, professor_id, link, semester) VALUES ('$name', '$description', '$professor_id', '$link', '$semester')";}
     if ($conn->query($sql) === TRUE) {
       echo "Course added successfully.<br>";
     } else {

@@ -34,8 +34,8 @@ include "header.php";
     $type = sanitize($_POST['type']);
     $images = sanitize($_POST['images']);
     $number = sanitize($_POST['number']);
-    if($city != 'Koper' | $city != 'Izola' | $city !='Piran' | $city != 'Portorož' | $city !='Lucija' | $type != 'Shared Room'| $type != 'Single Room'| $type != 'Condo'| $type != 'Other'| $type != 'Studio' | $type != 'Other'){
-        header('Location: adminAccommodations.php');
+    if(($city != 'Koper' & $city != 'Izola' & $city !='Piran' & $city != 'Portorož' & $city !='Lucija') | ($type != 'Shared Room'& $type != 'Single Room'& $type != 'Condo'& $type != 'Other'& $type != 'Studio' & $type != 'Other')){
+      header('Location: adminAccommodations.php');
   }
     else {$sql = "UPDATE Accommodation SET name='$name', description='$description', city='$city', address='$address', type='$type', images='$images', number='$number' WHERE id='$id'";}
     if ($conn->query($sql) === TRUE) {
@@ -66,7 +66,7 @@ include "header.php";
     $type = sanitize($_POST['type']);
     $images = sanitize($_POST['images']);
     $number = sanitize($_POST['number']);
-    if($city != 'Koper' | $city != 'Izola' | $city !='Piran' | $city != 'Portorož' | $city !='Lucija' | $type != 'Shared Room'| $type != 'Single Room'| $type != 'Condo'| $type != 'Other'| $type != 'Studio' | $type != 'Other'){
+    if(($city != 'Koper' & $city != 'Izola' & $city !='Piran' & $city != 'Portorož' & $city !='Lucija') | ($type != 'Shared Room'& $type != 'Single Room'& $type != 'Condo'& $type != 'Other'& $type != 'Studio' & $type != 'Other')){
         header('Location: adminAccommodations.php');
   }else $sql = "INSERT INTO Accommodation (name, description, city, address, type, images, number) VALUES ('$name', '$description', '$city', '$address', '$type', '$images', '$number')";
     if ($conn->query($sql) === TRUE) {

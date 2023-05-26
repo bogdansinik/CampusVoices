@@ -58,8 +58,8 @@ include "header.php";
     $surname = sanitize($_POST['surname']);
     $email = sanitize($_POST['email']);
     $department = sanitize($_POST['department']);
-
-    $sql = "INSERT INTO Professor (name, surname, email, department) VALUES ('$surname','$name', '$email', '$department')";
+    //echo $department;
+    $sql = "INSERT INTO Professor (name, surname, email, department) VALUES ('$name','$surname', '$email', '$department')";
     if ($conn->query($sql) === TRUE) {
       echo "Professor added successfully.<br>";
     } else {
@@ -99,7 +99,7 @@ include "header.php";
     echo "<td><input type='text' name='name' placeholder='Professor Name' required></td>";
     echo "<td><input type='text' name='surname' placeholder='Professor Surname' required></td>";
     echo "<td><input type='text' name='email' placeholder='Professor Email' required></td>";
-    echo "<td><input type='text' name='phone' placeholder='Professor Department' required></td>";
+    echo "<td><input type='text' name='department' placeholder='Professor Department' required></td>";
     echo "<td><input type='submit' name='add' value='Add'></td>";
     echo "</form>";
     echo "</tr>";
