@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <link rel="stylesheet" type="text/css" href="styleLogin.css">
 </head>
 <body>
-    <h2>CAMPUS VOICES</h2>
+    <h2 id="title">CAMPUS VOICES</h2>
   <div id="container">
     <div id="image-container">
       <img src="./images/university.jpg" alt="Logo" width="200">
