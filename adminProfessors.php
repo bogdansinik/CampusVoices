@@ -10,6 +10,7 @@ include "header.php";
 <html>
 <head>
     <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="admin.css">
     <title>Admin Professors</title>
 </head>
 <body>

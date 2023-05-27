@@ -10,6 +10,7 @@ include "header.php";
 <html>
 <head>
     <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="admin.css">
   <title>Admin Food</title>
 </head>
 <body>
@@ -85,7 +86,7 @@ include "header.php";
   if ($result->num_rows > 0) {
     // Display restaurant data in a table
     echo "<table>";
-    echo "<tr><th>ID</th><th>Name</th><th>City</th><th>Address</th><th>Phone</th><th>Price</th><th>Image</th></tr>";
+    echo "<tr><th>ID</th><th>Name</th><th>City</th><th>Address</th><th>Phone</th><th>Price</th><th>Image</th><th>Actions</th></tr>";
 
     while ($row = $result->fetch_assoc()) {
       echo "<tr>";
