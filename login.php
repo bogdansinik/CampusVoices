@@ -12,6 +12,7 @@ $uname = '';
 
 // Processing form data when form is submitted
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    echo "here";
     $uname = trim($_POST['uname']);
     $pass = trim($_POST['password']);
     // Validate credentials
@@ -47,17 +48,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
   <title>Campus Voices - Login</title>
   <link rel="stylesheet" type="text/css" href="styleLogin.css">
-  <style>
-  </style>
 </head>
 <body>
+    <h2>CAMPUS VOICES</h2>
   <div id="container">
     <div id="image-container">
       <img src="./images/university.jpg" alt="Logo" width="200">
     </div>
-    <div id="form-container>
+    <div id="form-container">
         <div id="login-form">
-        <h2>Log In</h2>
+        <h3>Log In</h3>
         <form action="login.php" method="post">
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
@@ -69,6 +69,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   </div>
 </body>
 </html>
-
-
-

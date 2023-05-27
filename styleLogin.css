@@ -3,6 +3,14 @@ body {
     font-family: Arial, sans-serif;
   }
 
+  h2 {
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    margin: 10px;
+    padding: 5px;
+  }
+
   #container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -62,4 +70,5 @@ body {
   }
   img {
     border-radius: 50%;
+    width: 450px;
 }
