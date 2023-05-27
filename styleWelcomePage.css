@@ -94,6 +94,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: auto;
   }
 
   .grid-item img {
@@ -156,6 +157,7 @@ body {
     padding: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
+    margin: 15px 5px;
   }
 
   .navbar-title {
@@ -172,8 +174,4 @@ body {
     cursor: pointer;
     color: rgb(255, 136, 0);
     font-weight: 800;
-
-    
   }
-
-  
