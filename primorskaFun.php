@@ -57,7 +57,7 @@ include "header.php";
 <head>
     <title>Primorska Fun - Ads</title>
     <link rel="stylesheet" type="text/css" href="stylePrimorskaCourses.css">
-	<link rel="stylesheet" type="text/css" href="styleCurrentProfessor.css">
+	
     <link rel="stylesheet" type="text/css" href="header.css">
 </head>
 <body>
