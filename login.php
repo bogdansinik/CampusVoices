@@ -12,10 +12,13 @@ $uname = '';
 
 // Processing form data when form is submitted
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    echo "here!";
     $uname = trim($_POST['uname']);
     $pass = trim($_POST['password']);
+    echo $uname;
     // Validate credentials
     $sql = "SELECT * FROM User WHERE username = '$uname' AND password = '$pass'";
+    $sql_all = "SELECT * FROM User";
     if ($result = mysqli_query($conn, $sql)) {
         if ($result->num_rows > 0) {
             if(!isset($_SESSION)) 
@@ -43,38 +46,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
-    <title>LOGIN</title>
-
-    <link rel="stylesheet" type="text/css" href="styleLogin.css">
-
+  <title>Campus Voices - Login</title>
+  <link rel="stylesheet" type="text/css" href="styleLogin.css">
 </head>
-
 <body>
-
-     <form action="login.php" method="post">
-
-        <h2>LOGIN</h2>
-
-        <label>User Name</label>
-
-        <input type="text" name="uname" placeholder="User Name"><br>
-
-        <label>Password</label>
-
-        <input type="password" name="password" placeholder="Password"><br> 
-
-        <button type="submit">Login</button>
-
-     </form>
-<p>If not registered <br><a href="register.php">click here</a></p>
+    <h2 id="title">CAMPUS VOICES</h2>
+  <div id="container">
+    <div id="image-container">
+      <img src="./images/university.jpg" alt="Logo" width="200">
+    </div>
+    <div id="form-container">
+        <div id="login-form">
+        <h3>Log In</h3>
+        <form action="login.php" method="post">
+            <input type="text" name="uname" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Sign In</button>
+        </form>
+        <a href="register.php">Not registered?</a>
+        </div>
+    </div>
+  </div>
 </body>
-
 </html>
-
-
-
