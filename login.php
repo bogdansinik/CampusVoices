@@ -12,11 +12,13 @@ $uname = '';
 
 // Processing form data when form is submitted
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    echo "here";
+    echo "here!";
     $uname = trim($_POST['uname']);
     $pass = trim($_POST['password']);
+    echo $uname;
     // Validate credentials
     $sql = "SELECT * FROM User WHERE username = '$uname' AND password = '$pass'";
+    $sql_all = "SELECT * FROM User";
     if ($result = mysqli_query($conn, $sql)) {
         if ($result->num_rows > 0) {
             if(!isset($_SESSION)) 
@@ -59,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div id="login-form">
         <h3>Log In</h3>
         <form action="login.php" method="post">
-            <input type="text" name="username" placeholder="Username" required>
+            <input type="text" name="uname" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Sign In</button>
         </form>
