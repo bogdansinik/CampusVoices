@@ -1,12 +1,13 @@
 body {
-    background-color: #87CEEB;
+    background-color: lightblue;
     font-family: Arial, sans-serif;
   }
   
   #container {
     display: grid;
-    grid-template-columns: 1fr;
-    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    justify-items: center;
     align-items: center;
     height: 100vh;
   }
@@ -30,7 +31,6 @@ body {
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 3px;
-    text-align: center; /* Center the text within the input fields */
   }
   
   #login-form button {
