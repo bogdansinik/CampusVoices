@@ -45,32 +45,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!DOCTYPE html>
 
 <html>
-
 <head>
-
     <title>LOGIN</title>
-
     <link rel="stylesheet" type="text/css" href="styleLogin.css">
-
 </head>
 
 <body>
+    <div>
+        <div id="picture">
+            <img src=".images/university.jpg" alt="Logo" width="400">
+        </div>
+        <div id="login-form">
+            <form action="login.php" method="post">
 
-     <form action="login.php" method="post">
+                <h2>LOGIN</h2>
 
-        <h2>LOGIN</h2>
+                <label>User Name</label>
+                <input type="text" name="uname" placeholder="User Name"><br>
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Password"><br> 
+                <button type="submit">Login</button>
 
-        <label>User Name</label>
-
-        <input type="text" name="uname" placeholder="User Name"><br>
-
-        <label>Password</label>
-
-        <input type="password" name="password" placeholder="Password"><br> 
-
-        <button type="submit">Login</button>
-
-     </form>
+            </form>
+        </div>
+    </div>
+     
 <p>If not registered <br><a href="register.php">click here</a></p>
 </body>
 

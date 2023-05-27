@@ -62,3 +62,80 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+.container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .logo-image {
+    display: block;
+    width: 200px; /* Adjust the width as needed */
+    border-radius: 50%;
+  }
+  
+  .logo-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 20px; /* Adjust the font size as needed */
+    text-transform: uppercase;
+    pointer-events: none; /* Ensures that the text does not capture hover events */
+  }
+
+  body {
+    background-color: lightblue;
+    font-family: Arial, sans-serif;
+  }
+  
+  #container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  #login-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  #login-form h2 {
+    text-align: center;
+    color: orange;
+  }
+  
+  #login-form input[type="text"],
+  #login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  #login-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: orange;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-weight: bold;
+  }
+  
+  #login-form a {
+    text-align: center;
+    color: #777;
+    text-decoration: none;
+  }
+  
+  #login-form a:hover {
+    color: orange;
+  }
