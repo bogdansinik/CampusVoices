@@ -43,36 +43,83 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <!DOCTYPE html>
-
 <html>
 <head>
-    <title>LOGIN</title>
-    <link rel="stylesheet" type="text/css" href="styleLogin.css">
+  <title>Campus Voices - Login</title>
+  <style>
+    body {
+      background-color: lightblue;
+      font-family: Arial, sans-serif;
+    }
+    
+    #container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px;
+      justify-items: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    #login-form {
+      background-color: white;
+      padding: 30px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    #login-form h2 {
+      text-align: center;
+      color: orange;
+    }
+    
+    #login-form input[type="text"],
+    #login-form input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    
+    #login-form button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: orange;
+      border: none;
+      border-radius: 3px;
+      color: white;
+      font-weight: bold;
+    }
+    
+    #login-form a {
+      text-align: center;
+      color: #777;
+      text-decoration: none;
+    }
+    
+    #login-form a:hover {
+      color: orange;
+    }
+  </style>
 </head>
-
 <body>
+  <div id="container">
     <div>
-        <div id="picture">
-            <img src=".images/university.jpg" alt="Logo" width="400">
-        </div>
-        <div id="login-form">
-            <form action="login.php" method="post">
-
-                <h2>LOGIN</h2>
-
-                <label>User Name</label>
-                <input type="text" name="uname" placeholder="User Name"><br>
-                <label>Password</label>
-                <input type="password" name="password" placeholder="Password"><br> 
-                <button type="submit">Login</button>
-
-            </form>
-        </div>
+      <img src="your-image.jpg" alt="Logo" width="200">
     </div>
-     
-<p>If not registered <br><a href="register.php">click here</a></p>
+    <div id="login-form">
+      <h2>Campus Voices</h2>
+      <form>
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Sign In</button>
+      </form>
+      <a href="#">Forgot password?</a>
+    </div>
+  </div>
 </body>
-
 </html>
 
 
