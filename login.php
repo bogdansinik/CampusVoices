@@ -52,17 +52,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
   <div id="container">
-    <div>
-      <img src="your-image.jpg" alt="Logo" width="200">
+    <div id="image-container">
+      <img src="./images/university.jpg" alt="Logo" width="200">
     </div>
-    <div id="login-form">
-      <h2>Campus Voices</h2>
-      <form action="login.php" method="post">
-        <input type="text" name="username" placeholder="Username" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <button type="submit">Sign In</button>
-      </form>
-      <a href="register.php">Not registered?</a>
+    <div id="form-container>
+        <div id="login-form">
+        <h2>Log In</h2>
+        <form action="login.php" method="post">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Sign In</button>
+        </form>
+        <a href="register.php">Not registered?</a>
+        </div>
     </div>
   </div>
 </body>
