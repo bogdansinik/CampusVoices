@@ -2,6 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #87CEEB;
 }
 
 
@@ -9,22 +10,25 @@ body {
   width: 80%;
   margin: 0 auto;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
   text-align: center;
-  
+  margin-bottom: 20px;
 }
 
 .courses {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 20px;
+  grid-gap: 30px;
+  width: auto;
 }
 
 .course {
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 20px;
   padding: 20px;
   background-color: #f9f9f9;
 }

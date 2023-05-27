@@ -8,6 +8,7 @@ include "header.php";
 <head>
     <title>Food</title>
     <link rel="stylesheet" type="text/css" href="stylePrimorskaFood.css">
+    <link rel="stylesheet" type="text/css" href="header.css">
 </head>
 <body>
    
