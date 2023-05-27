@@ -37,11 +37,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <head>
     <title>REGISTER</title>
-    <link rel="stylesheet" type="text/css" href="styleLogin.css">
+    <link rel="stylesheet" type="text/css" href="styleRegister.css">
+
 </head>
 
 <body>
-    <form action="register.php" method="post">
+    <form action="register.php" method="post" class="formRegister">
         <h2>REGISTER</h2>
         <label>Name</label>
         <input type="text" name="fname" placeholder="Name" required><br>
@@ -59,8 +60,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <option value="Student">Student</option>
         </select><br>
         <button type="submit">Register</button>
+
+        <p class="hasAccount">Have an account?<br><a href="login.php">Click here</a></p>
     </form>
-    <p>Have an account?<br><a href="login.php">Click here</a></p>
+    
 </body>
 
 </html>
