@@ -72,7 +72,7 @@ include "header.php";
                     echo '<p>' . $address . '</p>';
                     echo '<p>Phone: ' . $phone . '</p>';
                     echo '<p>Price for students: ' . $price . ' €</p>';
-                    echo '<div class="rating">';
+                    
                     echo '<div class="rating">';
                     $filledStars = floor($averageRating); // Number of filled stars
                     $hasHalfStar = $averageRating - $filledStars >= 0.5; // Check if there's a half star
@@ -96,7 +96,7 @@ include "header.php";
                     echo '</div>';
                     echo '</div>';
                     echo '</div>';
-                    echo '</div>';
+                    
                 }
             } else {
                 // No restaurants found
