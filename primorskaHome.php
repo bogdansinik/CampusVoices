@@ -13,8 +13,10 @@ include "header.php";
 </head>
 
 <body>
+	
 	<div class="container">
-		<h1>Welcome to University of Primorska Campus Voices</h1>
+	<h1 style="font-size: 45px;">Welcome</h1>
+		
 		<div class="options">
 			<!-- <div class="div" id="courses">
 				<a href="primorskaCourses.php">Courses</a>
