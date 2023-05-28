@@ -79,11 +79,12 @@ body {
   }
 
   .grid-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 100px;
-  height: 400px;
-  margin: 100px auto; /* Updated */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 100px;
+    height: 400px;
+  
+    margin-top: 25%;
 }
 
   .grid-item {
