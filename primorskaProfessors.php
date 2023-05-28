@@ -55,7 +55,6 @@ include "header.php";
                     echo '<p>Average rating: ' . number_format($averageRating, 1) . '</p>';
                     echo '<a href="currentProfessor.php?id=' . $id . '">Rate Professor</a>';
                     echo '</div>';
-                    echo '<br>';
                 }
             } else {
                 // No professors found
@@ -67,8 +66,6 @@ include "header.php";
             ?>
         </div>
     </div>
-    <footer>
-        <p>&copy; 2023 University of Primorska Campus Voices</p>
-    </footer>
+    
 </body>
 </html>

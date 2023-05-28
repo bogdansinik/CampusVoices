@@ -1,21 +1,21 @@
 <?php
 
-include "header.php";
+//include "header.php";
 
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Welcome to University of Primorska Campus Voices</title>
+	
 	<link rel="stylesheet" type="text/css" href="stylePrimorskaHome.css">
 	<link rel="stylesheet" type="text/css" href="header.css">
 </head>
 
 <body>
-	
+	<title>Welcome to University of Primorska Campus Voices</title>
 	<div class="container">
-	<h1 style="font-size: 45px;">Welcome</h1>
+	<h1 style="font-size: 45px;">Welcome to University of Primorska Campus Voices</h1>
 		
 		<div class="options">
 			<!-- <div class="div" id="courses">
@@ -38,8 +38,6 @@ include "header.php";
 			</div>
 		</div>
 	</div>
-	<footer>
-		<p>&copy; 2023 University of Primorska Campus Voices</p>
-	</footer>
+	
 </body>
 </html>

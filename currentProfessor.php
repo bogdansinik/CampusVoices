@@ -196,10 +196,6 @@ if (isset($_GET['id'])) {
                     
 
             </div>
-
-            <footer>
-                <p>&copy; 2023 University of Primorska Campus Voices</p>
-            </footer>
         </body>
         </html>
         <?php

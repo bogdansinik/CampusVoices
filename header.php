@@ -1,3 +1,8 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="header.css" type="text/css">
+    </head>
+</html>
 <?php
 
 if(!isset($_SESSION)) 
@@ -8,7 +13,7 @@ $userId = $_SESSION['id'];
 $role = $_SESSION['role'];
 //echo $role;
 
-if($role == 'admin'){
+
     if($role == 'admin'){
     echo "<header>";
     echo "<h1>University of Primorska Campus Voices</h1>";

@@ -1,5 +1,7 @@
 /* CSS styles for the current course page */
-
+body {
+  background-color: #87CEEB;
+}
 .current-course {
     max-width: 800px;
     margin: 0 auto;

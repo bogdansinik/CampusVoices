@@ -1,6 +1,6 @@
 <?php
 
-include "header.php";
+//include "header.php";
 
 ?>
 
@@ -18,7 +18,7 @@ include "header.php";
 
 <body>
 	<div class="container">
-		<h1>Welcome to University of Primorska Campus Voices</h1>
+		<h1>Primorska Faculties</h1>
 		<div class="options">
 			<div class="div" id="famnit">
 				<a href="primorskaFamnit.php">FAMNIT</a>
@@ -37,8 +37,6 @@ include "header.php";
 			</div>
 		</div>
 	</div>
-	<footer>
-		<p>&copy; 2023 University of Primorska Campus Voices</p>
-	</footer>
+	
 </body>
 </html>

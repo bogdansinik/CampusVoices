@@ -69,6 +69,7 @@ body {
   height: auto;
   transition: transform 0.5s;
   margin: 1rem auto;
+  border-radius: 10px;
 }
 
 .offer:hover img {

@@ -1,3 +1,9 @@
+<?php
+
+//include "header.php";
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,13 +11,9 @@
 	<link rel="stylesheet" type="text/css" href="stylePrimorskaHome.css">
 	<link rel="stylesheet" type="text/css" href="header.css">
 </head>
-<header>
-	<a href="welcomePage.php">HomePage</a>
-	<a href="logout.php">Logout</a>
-</header>
 <body>
 	<div class="container">
-		<h1>Welcome to University of Primorska Campus Voices</h1>
+		<h1>Courses & professors</h1>
 		<div class="options">
 			<div class="div" id="courses">
 				<a href="primorskaCourses.php">Courses</a>
@@ -21,8 +23,6 @@
             </div>
 		</div>
 	</div>
-	<footer>
-		<p>&copy; 2023 University of Primorska Campus Voices</p>
-	</footer>
+	
 </body>
 </html>

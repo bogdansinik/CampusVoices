@@ -108,9 +108,7 @@ include "header.php";
             ?>
         </div>
     </div>
-    <footer>
-        <p>&copy; 2023 University of Primorska Campus Voices</p>
-    </footer>
+   
     <script>
         // Add event listener to the filter button
         const filterBtn = document.getElementById('filter-btn');

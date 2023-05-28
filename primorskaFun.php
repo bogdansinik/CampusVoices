@@ -57,11 +57,9 @@ include "header.php";
 <head>
     <title>Primorska Fun - Ads</title>
     <link rel="stylesheet" type="text/css" href="stylePrimorskaCourses.css">
-	
-    <link rel="stylesheet" type="text/css" href="header.css">
 </head>
-<body>
-	<main>
+<body >
+	<main style = "margin : 20px">
 		<h2>Student Organizations</h2>
 
 		<ul class="org-list">
@@ -81,9 +79,10 @@ include "header.php";
 				<a href="https://www.famnit.upr.si/sl/studenti/studentski-svet">See Events</a>
 			</li>
 		</ul>
-	
-    <div class="ads-container">
-        <h2>Ads</h2>
+        <div>
+            <h2>Ads</h2>
+        </div>
+    <div class="courses">
         <?php if (!empty($ads)) : ?>
             <?php foreach ($ads as $ad) : 
 				$adOwner = $ad['user_id'];
@@ -93,7 +92,7 @@ include "header.php";
 				$name = $row['name'];
 				$surname = $row['surname'];
 				?>
-                <div class="course">
+                <div class="course" style = "margin: 20px">
                     <h3><?php echo $ad['title']; ?> by <?php echo $name . " " . $surname; ?></h3>
                     <p>Description: <?php echo $ad['description']; ?></p>
                     <p>Location: <?php echo $ad['location']; ?></p>
@@ -107,6 +106,7 @@ include "header.php";
                         </form>
                     <?php endif; ?>
                 </div>
+            </div>
             <?php endforeach; ?>
         <?php else : ?>
             <p>No ads available.</p>
@@ -136,8 +136,6 @@ include "header.php";
         </form>
     </div>
 	</main>
-    <footer>
-        <p>University of Primorska Campus Voices - <?php echo date("Y"); ?></p>
-    </footer>
+   
 </body>
 </html>
