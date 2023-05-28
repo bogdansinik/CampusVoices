@@ -5,7 +5,6 @@ body {
   background-color: #87CEEB;
 }
 
-
 .container {
   width: 80%;
   margin: 0 auto;
@@ -23,16 +22,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 30px;
-
   width: auto;
-}
-
-.course {
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  padding: 20px;
-  background-color: #f9f9f9;
-  
 }
 
 .course h2 {
@@ -43,19 +33,32 @@ h1 {
   margin: 10px 0;
 }
 
+.course {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #3686A8;
+}
+
 .course a {
   display: inline-block;
   margin-top: 10px;
   padding: 8px 16px;
   text-decoration: none;
-  background-color: #007bff;
+  background-color: orange;
   color: #fff;
   border-radius: 5px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .course a:hover {
   background-color: #0056b3;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 footer {
@@ -63,4 +66,63 @@ footer {
   margin-top: 20px;
   padding: 10px;
   background-color: #87CEEB;
+}
+
+.search-form input[type="text"] {
+  border: 1px solid #87CEEA;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.search-form input[type="submit"] {
+  display: inline-block;
+  margin-top: 1px;
+  padding: 8px 16px;
+  text-decoration: none;
+  background-color: orange;
+  font-weight: 550; /* Increase the font weight */
+  font-size: 14px;
+  color: #fff;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.search-form input[type="submit"]:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Additional colors */
+
+/* Light blue for container background */
+.container {
+  margin-top: 1%;
+  background-color: #87CEEA;
+}
+
+/* Darker blue for course background */
+.course {
+  background-color: #3686A8;
+}
+
+.course h2,
+.course p,
+.course a {
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Light gray for border color */
+.course {
+  border: 1px solid #ddd;
+}
+
+.search-form label {
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 18px;
+  font-weight: 600; /* Increase the font weight */
 }
