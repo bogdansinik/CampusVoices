@@ -20,7 +20,7 @@ include "header.php";
                 <input type="submit" value="Search">
             </form>
         </div>
-        <div class="professors">
+        <div class="courses">
             <?php
             // Include the database connection file
             include 'db_conn.php';

@@ -1,0 +1,105 @@
+/* header.css */
+/* Add your CSS styles for the header here */
+
+/* Custom styles for the page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #87CEEB;
+  }
+  
+  h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 6px 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  i {
+    font-style: italic;
+    color: #777;
+  }
+  
+  /* Additional futuristic styles */
+  body {
+    background-image: linear-gradient(to bottom right, #E8F5FD, #B1E2F9);
+  }
+  
+  h2 {
+    color: #fff;
+    font-size: 32px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  table {
+    border: 1px solid #fff;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  th, td {
+    color: #333;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #3AA1E0;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f7f7f7;
+  }
+  
+  input[type="text"], input[type="submit"] {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #3AA1E0;
+  }
+  
+  i {
+    color: #888;
+  }
+  

@@ -3,11 +3,13 @@
 include "header.php";
 
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Accommodation Offers</title>
     <link rel="stylesheet" type="text/css" href="stylePrimorskaAccommodation.css">
+    <link rel="stylesheet" type="text/css" href="header.css">
 </head>
 <body>
     <div class="filter-form">

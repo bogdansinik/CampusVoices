@@ -12,10 +12,10 @@ $uname = '';
 
 // Processing form data when form is submitted
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    echo "here!";
+    //echo "here!";
     $uname = trim($_POST['uname']);
     $pass = trim($_POST['password']);
-    echo $uname;
+    // echo $uname;
     // Validate credentials
     $sql = "SELECT * FROM User WHERE username = '$uname' AND password = '$pass'";
     $sql_all = "SELECT * FROM User";
