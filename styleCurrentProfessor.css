@@ -5,31 +5,34 @@ body {
     margin: 0;
     padding: 0;
     background-color: #87CEEB;
+    color: white;
 }
 
 .current-professor {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 2rem auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #3686A8;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
+   
+
 }
 
 .current-professor h2 {
-    color: #333;
-    font-size: 24px;
+     font-size: 28px;
     margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .current-professor p {
-    color: #555;
-    font-size: 16px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .current-professor h3 {
-    color: #333;
+    color: #fff;
     font-size: 20px;
     margin-bottom: 10px;
 }
@@ -37,14 +40,17 @@ body {
 .review {
     margin-bottom: 20px;
     padding: 10px;
-    background-color: #f9f9f9;
+    background-color: #87CEEB;
     border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 20px ;
 }
 
 .review p {
-    color: #555;
+    color: #fff;
     font-size: 16px;
     margin-bottom: 5px;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0.5);
 }
 
 .review form {
@@ -52,17 +58,20 @@ body {
 }
 
 .review form input[type="submit"] {
-    background-color: #4CAF50;
+    background-color: orange;
     color: #fff;
     border: none;
     padding: 5px 10px;
     font-size: 14px;
     cursor: pointer;
     border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  
 }
 
 .review form input[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #0056b3;
+    transform: scale(1.1);
 }
 
 form label {
@@ -81,17 +90,20 @@ form textarea {
 }
 
 form input[type="submit"] {
-    background-color: #4CAF50;
+    background-color: orange;
     color: #fff;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 form input[type="submit"]:hover {
-    background-color: #45a049;
+     transform: scale(1.1);
+    background-color: #0056b3;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 p.no-reviews {
