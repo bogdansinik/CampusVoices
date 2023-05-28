@@ -71,7 +71,7 @@ include "header.php";
                 echo '<div class="offer">';
                 echo '<a href="currentAccommodation.php?id=' . $id . '">';
                 echo '<img src="' . $images . '" alt="' . $name . '">';
-                echo '<p>' . $city . ", " . $address . "<br>" . $description . '<br> Average rating: '.$averageRating.' </p>';
+                echo '<p>' . $city . ", " . $address . "<br>" . $description . '<br> Average rating: '.$averageRating.' </p> </a>';
                 echo '</div>';
             }
         } else {
