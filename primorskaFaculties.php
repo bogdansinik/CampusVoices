@@ -18,7 +18,7 @@
 
 <body>
 	<div class="container">
-		<h1>Primorska Faculties</h1>
+		<h1 style="font-size: 45px;">Primorska Faculties</h1>
 		<div class="options">
 			<div class="div" id="famnit">
 				<a href="primorskaFamnit.php">FAMNIT</a>

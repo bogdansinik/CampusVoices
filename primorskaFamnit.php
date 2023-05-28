@@ -13,8 +13,8 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Courses & professors</h1>
-		<div class="options">
+		<h1 style="font-size: 45px;" >Courses & professors</h1>
+		<div style="margin-top: 18%;" class="options">
 			<div class="div" id="courses">
 				<a href="primorskaCourses.php">Courses</a>
 			</div>
