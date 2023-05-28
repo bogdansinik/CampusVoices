@@ -56,7 +56,7 @@ include "header.php";
 <html>
 <head>
     <title>Primorska Fun - Ads</title>
-    <link rel="stylesheet" type="text/css" href="stylePrimorskaCourses.css">
+    <link rel="stylesheet" type="text/css" href="stylePrimorskaFun.css">
 </head>
 <body >
 	<main style = "margin : 20px">
@@ -82,7 +82,7 @@ include "header.php";
         <div>
             <h2>Ads</h2>
         </div>
-    <div class="courses">
+    <div class="ads">
         <?php if (!empty($ads)) : ?>
             <?php foreach ($ads as $ad) : 
 				$adOwner = $ad['user_id'];
@@ -92,7 +92,7 @@ include "header.php";
 				$name = $row['name'];
 				$surname = $row['surname'];
 				?>
-                <div class="course" style = "margin: 20px">
+                <div class="ad" style = "margin: 20px">
                     <h3><?php echo $ad['title']; ?> by <?php echo $name . " " . $surname; ?></h3>
                     <p>Description: <?php echo $ad['description']; ?></p>
                     <p>Location: <?php echo $ad['location']; ?></p>
@@ -106,12 +106,13 @@ include "header.php";
                         </form>
                     <?php endif; ?>
                 </div>
-            </div>
+            
             <?php endforeach; ?>
+            </div>
         <?php else : ?>
             <p>No ads available.</p>
         <?php endif; ?>
-
+    <div class = "createAd">
         <h2>Create an Ad</h2>
         <?php if (isset($error)) : ?>
             <p><?php echo $error; ?></p>
@@ -134,6 +135,7 @@ include "header.php";
 
             <input type="submit" name="submit" value="Post Ad">
         </form>
+        </div>
     </div>
 	</main>
    
