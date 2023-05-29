@@ -1,57 +1,5 @@
-<<<<<<< HEAD
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 15px;
-  }
-  
-  .restaurants {
-    display: grid;
-  grid-template-columns: repeat(3, 1fr);    gap: 2rem;
-    margin-top: 2rem;
-  }
-  
-  .restaurant {
-    position: relative;
-  }
-  
-  .restaurant img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .restaurant .rating {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 0.5rem 1rem;
-    border-radius: 10px;
-  }
-  
-  .restaurant .name {
-    font-size: 1.5rem;
-    margin-top: 0.5rem;
-  }
-  
-  .restaurant .description {
-    margin-top: 0.5rem;
-  }
-  
-  .restaurant:hover img {
-    transform: scale(1.05);
-  }
-  
-  .restaurant:hover .rating {
-    opacity: 0;
-  }
- 
-=======
 /* stylePrimorskaFood.css */
 
->>>>>>> 294bdc48c844759d43f576154c1fcfb4f7b84ea4
 body {
   font-family: Arial, sans-serif;
   margin: 0;
